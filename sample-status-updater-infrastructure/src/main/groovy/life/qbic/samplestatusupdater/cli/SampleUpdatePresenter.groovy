@@ -11,6 +11,8 @@ class SampleUpdatePresenter implements UpdateOutput{
             SampleUpdateView.displaySucessfulUpdate(response.sampleCode)
         } else {
             SampleUpdateView.displayFailingUpdate(response.sampleCode)
+            // We throw a runtime exception to let the main logic deal with it
+            throw new RuntimeException("Update failed.")
         }
     }
 }

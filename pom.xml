@@ -11,10 +11,10 @@
     <parent>
 		<groupId>life.qbic</groupId>
 		<artifactId>cli-parent-pom</artifactId>
-		<version>2.1.0</version>
+		<version>3.1.4</version>
 	</parent>
 	<artifactId>sample-status-updater-cli</artifactId>
-	<version>1.3.0-SNAPSHOT</version>
+	<version>1.2.4</version>
 	<name>sample status updater app</name>
 	<url>http://github.com/qbicsoftware/sample-status-updater-cli</url>
 	<description>Command-line utility to add the first location of sample tracking information</description>

@@ -4,7 +4,21 @@ Changelog
 
 This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
-1.3.0-SNAPSHOT (2021-03-23)
+1.2.4 (2021-06-04)
+---------------------------
+
+**Added**
+
+**Fixed**
+
+- App now writes the property file correctly even on failure
+- App returns exit code of 1, if an exception was detected during the sample update
+
+**Dependencies**
+
+**Deprecated**
+
+1.2.3 (2021-03-25)
 ---------------------------
 
 **Added**
@@ -13,7 +27,22 @@ This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
 **Dependencies**
 
-* Bump ``data-model-lib:2.0.0`` -> ``2.4.0``
+* Bump ``cli-parent-pom:2.1.0`` -> ``3.1.4`` (`#10 <https://github.com/qbicsoftware/sample-status-updater-cli/pull/10>`_)
+
+**Deprecated**
+
+1.2.2 (2021-03-25)
+---------------------------
+
+**Added**
+
+* Add `maven enforcer plugin <https://maven.apache.org/enforcer/maven-enforcer-plugin>`_ to show dependency conflicts
+
+**Fixed**
+
+**Dependencies**
+
+* Bump ``data-model-lib:2.0.0`` -> ``2.4.0`` (`#8 <https://github.com/qbicsoftware/sample-status-updater-cli/pull/8>`_)
 
 **Deprecated**
 

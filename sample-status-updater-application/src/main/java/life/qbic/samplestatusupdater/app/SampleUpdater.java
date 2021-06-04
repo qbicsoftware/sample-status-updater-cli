@@ -75,15 +75,19 @@ public class SampleUpdater extends QBiCTool<StatusUpdaterCommand> {
         Date lastSearchDate = parseDateFromStringWithPattern((String) properties.get("lastSearchDate"), "yyyy-MM-dd");
 
         SampleUpdatePresenter updatePresenter = new SampleUpdatePresenter();
-
-        final UpdateSampleStatus updateSampleStatus = new UpdateSampleStatusImpl(sampleTrackingService, updatePresenter);
-        UseCaseConnector useCaseConnector = new UseCaseConnector(updateSampleStatus);
-        final FindNewOpenBisSamples findNewOpenBisSamples = new FindNewOpenBisSamples(searchService, useCaseConnector);
-        findNewOpenBisSamples.searchNewSamplesSince(lastSearchDate);
-
+        int exitCode = 0;
+        try {
+            final UpdateSampleStatus updateSampleStatus = new UpdateSampleStatusImpl(sampleTrackingService, updatePresenter);
+            UseCaseConnector useCaseConnector = new UseCaseConnector(updateSampleStatus);
+            final FindNewOpenBisSamples findNewOpenBisSamples = new FindNewOpenBisSamples(searchService, useCaseConnector);
+            findNewOpenBisSamples.searchNewSamplesSince(lastSearchDate);
+        } catch (Exception e) {
+            exitCode = 1;
+        }
         properties.put("lastSearchDate", new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         appProperties.updatePropertyFile(properties);
 
+        System.exit(exitCode);
     }
 
     URL createUrlFromString(String urlString){
